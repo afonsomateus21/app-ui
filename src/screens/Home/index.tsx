@@ -1,6 +1,8 @@
 import { View, Text } from "react-native";
-import { Container, Header, Title } from "./styles";
+import { Container, Content, Header, HeaderContent, Title } from "./styles";
 import premierBanner from '../../assets/premier.png';
+import { Input } from "../../components/Input";
+import { Card } from "../../components/Card";
 
 interface HomeProps {
   onLayout: () => Promise<void>
@@ -9,9 +11,15 @@ interface HomeProps {
 export function Home({ onLayout }: HomeProps) {
   return (
     <Container>
-      <Header source={ premierBanner }>
-        <Title>Título</Title>
+      <Header source={ premierBanner } >
+        <HeaderContent>
+          <Input placeholder="Pesquisar..." />
+        </HeaderContent>
       </Header>
+
+      <Content>
+        <Card />
+      </Content>
     </Container>
   );
 }
